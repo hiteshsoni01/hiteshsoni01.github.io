@@ -1,2 +1,74 @@
-<h1>This is my first Java blog</h1>
-<h1>I'll regular update my website</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Java Coding & Interview Q&A</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Prism.js CSS for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="left">
+        <img src="your-linkedin-profile-photo.jpg" alt="LinkedIn" class="profile-pic">
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="linkedin-link">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn Icon" class="linkedin-icon"/>
+        </a>
+      </div>
+      <h1>Java Coding • Interview Q&A</h1>
+    </div>
+  </header>
+  <aside>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="java-core.html">Java Core</a></li>
+        <li><a href="collections.html">Java Collections</a></li>
+        <li><a href="algorithms.html">Algorithms</a></li>
+        <li><a href="system-design.html">System Design</a></li>
+        <li><a href="sql.html">SQL</a></li>
+        <li><a href="https://yourusername.github.io/other-github-page4.html">Other Page4</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <main>
+    <section class="content">
+      <h2>Sample Java Code Structure</h2>
+      <div class="code-block-container">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <pre><code class="language-java">
+// Example: Find the largest string in a list
+List<String> strings = Arrays.asList("Java", "Interview", "Code");
+Optional<String> longest = strings
+    .stream()
+    .max(Comparator.comparingInt(String::length));
+System.out.println(longest.get());</code></pre>
+      </div>
+      <!-- Add more questions and code here -->
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Your Name • Hosted on GitHub Pages</p>
+  </footer>
+  <!-- Prism.js for syntax highlighting -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script>
+    function copyCode(btn) {
+      const code = btn.nextElementSibling.querySelector('code');
+      // Create temp textarea to copy text
+      const textarea = document.createElement('textarea');
+      textarea.value = code.textContent;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    }
+  </script>
+</body>
+</html>
+
